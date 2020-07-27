@@ -11,16 +11,6 @@ void List::print_menu(){
     cout << " 5 - Enter your choice and press return: ";
 
     cin >> choice;
-
-    if(choice == 4) {
-        exit(0);
-    }
-    if(choice == 2){
-        add_item();
-    }
-    if(choice == 1){
-        print_list();
-    }
     if(choice == 3){
         if (list.empty()){
         cout << "\n\ncannot delete an item, the list is empty!\n\n";
@@ -32,6 +22,17 @@ void List::print_menu(){
         }
         
     }
+    if(choice == 4) {
+        cout << "exiting the application...\n";
+        exit(0);
+    }
+    if(choice == 2){
+        add_item();
+    }
+    if(choice == 1){
+        print_list();
+    }
+
     else {
         cout << "Please insert a valid choice\n";
 
@@ -79,6 +80,5 @@ void List::delete_item() {
     list.erase(list.begin() + index_delete);
     cout << del_item << " was deleted\n\n";
 
-    print_menu();
-    
+    cin.clear();   
 }
